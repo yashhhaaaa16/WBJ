@@ -1,0 +1,16 @@
+@charset "ISO-8859-1";
+
+body{
+	align-content: center;
+    text-align: -webkit-center;
+    background-color: thistle;
+    
+}
+
+form{
+	-webkit-text-stroke: thin;
+}
+
+h1{
+	background-color: wheat;
+}

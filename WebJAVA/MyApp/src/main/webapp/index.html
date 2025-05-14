@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<link rel="stylesheet" href="./Resources/style.css">
+<script type="text/javascript">
+
+	function validation()
+	{
+		if(document.regform.txtUsername.value=="")
+			{
+			alert("Please Enter Username");
+			return false;
+			}
+		if(document.regform.txtPassword.value=="")
+			{
+			alert("Please Enter Password");
+			return false;
+			}
+		if(document.regform.txtEmail.value=="")
+			{
+			alert("Please Enter Email");
+			return false;
+			}
+		if((document.regform.gender[0].checked==false)&&(document.regform.gender[1].checked==false))
+			{
+			alert("Please Select Gender");
+			return false;
+			}
+		if(document.regform.age.selectedIndex==0)
+			{
+			alert("Please Select Age Group");
+			return false;
+			}
+		if(document.regform.terms.checked==false)
+			{
+			alert("Agree Terms!!!");
+			return false;
+			}
+	}
+</script>
+</head>
+<body>
+	<h1>Registration</h1>
+	<hr>
+	<form action="welcome.html" method="get" onsubmit="return validation();" name="regform">
+	
+	<table border="1">
+	<tr>
+	<td>Enter Username</td>
+	<td><input type="text" name="txtUsername">
+	</td>
+	<tr>
+	<td>Enter Password</td>
+	<td><input type="password" name="txtPassword">
+	</td>		
+	<tr>
+	<td>Enter Email</td>
+	<td><input type="Email" name="txtEmail">
+	</td>
+	<tr>
+	<td>Select Gender</td>
+	<td>
+	Female<input type="radio" name="gender"	value="female">
+	Male<input type="radio" name="gender" value = "male">
+	</td>
+	<tr>
+	<td>Select Age Group</td>
+	<td>
+	<select name="age">
+	<option value="select" selected="selected">Select</option>
+	<option value="21-25">21-25</option>
+	<option value="26-30">26-30</option>
+	<option value="31-35">21-25</option>
+	<option value="36-40">21-25</option>
+	
+	</select>
+	</td>
+	<tr>
+	<td><input type="checkbox" name="terms"></td>
+	<td>Agree Terms And Condition</td>
+	<tr>
+	<td><input type="reset" value="RESET"></td>
+	<td><input type="submit" value="REGISTER"></td>
+	</table>
+	
+	</form>
+</body>
+</html>
