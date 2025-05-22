@@ -1,0 +1,14 @@
+@charset "ISO-8859-1";
+body
+{
+	    align-content: center;
+    justify-items: center;
+}
+h1
+{
+	    color: dodgerblue;
+}
+tr
+{
+	    text-align: center;
+}

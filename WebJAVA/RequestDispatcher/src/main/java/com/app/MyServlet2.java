@@ -11,7 +11,8 @@ import java.io.PrintWriter;
 /**
  * Servlet implementation class MyServlet2
  */
-@WebServlet(urlPatterns={"/Serv2"})
+
+@WebServlet(urlPatterns = {"/serv2"})
 public class MyServlet2 extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
@@ -31,9 +32,9 @@ public class MyServlet2 extends HttpServlet {
 		//response.getWriter().append("Served at: ").append(request.getContextPath());
 		
 		response.setContentType("text/html");
-		PrintWriter pw =response.getWriter();
+		PrintWriter pw = response.getWriter();
 		
-		pw.write("Welcome "+request.getParameter("txtUsername"));
+		pw.write("Welcome  "+request.getParameter("txtUsername"));
 	}
 
 	/**

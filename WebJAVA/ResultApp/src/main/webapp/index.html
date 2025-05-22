@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<script type="text/javascript">
+	function valid()
+	{
+		var servletName = document.studForm.register.value;
+		if(servletName == "")
+			{
+			alert("Invalid");
+			return false;
+			}
+		else
+			{
+			//alert("Servlet Name = "+servletName);
+			document.location.href="details.html";
+			return false;
+			}
+	}
+</script>
+
+
+
+<form action="resultServlet" method="post" name="studForm">
+		<table border="2">
+
+			<tr>
+				<td>Enter Prn :</td>
+				<td><input type="text" name="txtPrn"></td>
+			</tr>
+			<tr>
+				<td><input type="button" value="register" onclick="return valid();" name="register"></td>
+				<td><input type="submit" value="Result"></td>
+			</tr>
+		</table>
+	</form>
+</body>
+</html>

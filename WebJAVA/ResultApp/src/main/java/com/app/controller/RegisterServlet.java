@@ -1,7 +1,6 @@
-package com.app;
+package com.app.controller;
 
 import jakarta.servlet.ServletException;
-import jakarta.servlet.ServletRequest;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
@@ -9,16 +8,21 @@ import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
 
+import com.app.bean.Student;
+import com.app.dao.StudentDAO;
+
 /**
- * Servlet implementation class Servlet1
+ * Servlet implementation class RegisterServlet
  */
-public class Servlet1 extends HttpServlet {
+
+@WebServlet("/regServlet")
+public class RegisterServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public Servlet1() {
+    public RegisterServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -33,19 +37,33 @@ public class Servlet1 extends HttpServlet {
 		response.setContentType("text/html");
 		PrintWriter pw = response.getWriter();
 		
+		int prn = Integer.parseInt(request.getParameter("txtPrn"));
 		String name = request.getParameter("txtName");
-		int age = Integer.parseInt(request.getParameter("txtAge"));
+		float m1 = Float.parseFloat(request.getParameter("txtS1"));
+		float m2 = Float.parseFloat(request.getParameter("txtS2"));
+		float m3 = Float.parseFloat(request.getParameter("txtS3"));
 		
-		if(age > 18)
-		{
-			pw.write("Eligible for Vote "+name);
-			
+		Student s = new Student();
+		s.setPrn(prn);
+		s.setName(name);
+		s.setS1(m1);
+		s.setS2(m2);
+		s.setS3(m3);
+		
+		try {
+			int status = StudentDAO.registerStudent(s);
+			if(status == 1)
+			{
+				response.sendRedirect("details.html");
+			}
+			else
+			{
+				pw.write("failed to Register");
+				request.getRequestDispatcher("details.html").include(request, response);
+			}
+		}catch (Exception e) {
+			e.printStackTrace();
 		}
-		else
-		{
-			pw.write("Not Eligible for Vote "+age);
-		}
-	
 	}
 
 	/**

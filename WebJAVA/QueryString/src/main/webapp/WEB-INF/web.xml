@@ -15,6 +15,10 @@
     <servlet-name>Servlet1</servlet-name>
     <servlet-class>com.app.Servlet1</servlet-class>
   </servlet>
+  <servlet-mapping>
+    <servlet-name>Servlet1</servlet-name>
+    <url-pattern>/serv1</url-pattern>
+  </servlet-mapping>
   <servlet>
     <description></description>
     <display-name>Servlet2</display-name>
@@ -23,6 +27,6 @@
   </servlet>
   <servlet-mapping>
     <servlet-name>Servlet2</servlet-name>
-    <url-pattern>/Serv2</url-pattern>
+    <url-pattern>/serv2</url-pattern>
   </servlet-mapping>
 </web-app>

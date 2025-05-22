@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+
+<form action="regServlet" method="post" >
+		<table border="2">
+
+			
+			<tr>
+				<td>Enter Prn :</td>
+				<td><input type="text" name="txtPrn"></td>
+			</tr>
+			<tr>
+				<td>Enter Name :</td>
+				<td><input type="text" name="txtName"></td>
+			</tr>
+			<tr>
+				<td>Enter Marks1 :</td>
+				<td><input type="text" name="txtS1"></td>
+			</tr>
+			<tr>
+				<td>Enter Marks2 :</td>
+				<td><input type="text" name="txtS2"></td>
+			</tr>
+			<tr>
+				<td>Enter Marks3 :</td>
+				<td><input type="text" name="txtS3"></td>
+			</tr>
+			<tr>
+				<td><input type="button" onclick="return back();" value="Back"></td>
+				<td><input type="submit" value="Register"></td>
+			</tr>
+		</table>
+	</form>
+	
+	<script type="text/javascript">
+		function back()
+		{
+			document.location.href="index.html";
+			return false;
+		}
+	</script>
+</body>
+</html>

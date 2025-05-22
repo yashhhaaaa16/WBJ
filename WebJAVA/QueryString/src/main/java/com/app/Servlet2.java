@@ -11,7 +11,6 @@ import java.io.PrintWriter;
 /**
  * Servlet implementation class Servlet2
  */
-@WebServlet("/serv2")
 public class Servlet2 extends GenericServlet {
 	private static final long serialVersionUID = 1L;
        
@@ -28,19 +27,22 @@ public class Servlet2 extends GenericServlet {
 	 */
 	public void service(ServletRequest request, ServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
+		
+		
 		response.setContentType("text/html");
 		PrintWriter pw = response.getWriter();
 		
 		String name = request.getParameter("txtName");
 		int age = Integer.parseInt(request.getParameter("txtAge"));
 		
-		if(age>18)
+		if(age > 18)
 		{
-			pw.write(name+" You Are Eligible For Voting");
+			pw.write("Eligible for Vote "+name);
+			
 		}
 		else
 		{
-			pw.write(" You Are Not Eiligible For Voting");
+			pw.write("Not Eligible for Vote "+age);
 		}
 	}
 

@@ -3,88 +3,93 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Insert title here</title>
-<link rel="stylesheet" href="./Resources/style.css">
+<link rel="stylesheet" href="resources/style.css">
 <script type="text/javascript">
-
-	function validation()
+	
+	function validation() 
 	{
-		if(document.regform.txtUsername.value=="")
+		if(document.regForm.txtUsername.value == "")
 			{
-			alert("Please Enter Username");
-			return false;
+				alert("Please Enter Username");
+				return false;
 			}
-		if(document.regform.txtPassword.value=="")
-			{
+		if(document.regForm.txtPassword.value == "")
+		{
 			alert("Please Enter Password");
 			return false;
-			}
-		if(document.regform.txtEmail.value=="")
-			{
-			alert("Please Enter Email");
+		}
+		if(document.regForm.txtEmail.value == "")
+		{
+			alert("Please Enter Email Id");
 			return false;
-			}
-		if((document.regform.gender[0].checked==false)&&(document.regform.gender[1].checked==false))
-			{
+		}
+		if((document.regForm.gender[0].checked == false) && (document.regForm.gender[1].checked == false))
+		{
 			alert("Please Select Gender");
 			return false;
-			}
-		if(document.regform.age.selectedIndex==0)
-			{
+		}
+		if(document.regForm.age.selectedIndex == 0)
+		{
 			alert("Please Select Age Group");
 			return false;
-			}
-		if(document.regform.terms.checked==false)
-			{
-			alert("Agree Terms!!!");
+		}
+		if(document.regForm.terms.checked == false)
+		{
+			alert("Please Agree to terms and conditions");
 			return false;
-			}
+		}
 	}
+	
+	
+	
+	
 </script>
 </head>
 <body>
-	<h1>Registration</h1>
+	<h1>Registration Form</h1>
 	<hr>
-	<form action="welcome.html" method="get" onsubmit="return validation();" name="regform">
-	
-	<table border="1">
-	<tr>
-	<td>Enter Username</td>
-	<td><input type="text" name="txtUsername">
-	</td>
-	<tr>
-	<td>Enter Password</td>
-	<td><input type="password" name="txtPassword">
-	</td>		
-	<tr>
-	<td>Enter Email</td>
-	<td><input type="Email" name="txtEmail">
-	</td>
-	<tr>
-	<td>Select Gender</td>
-	<td>
-	Female<input type="radio" name="gender"	value="female">
-	Male<input type="radio" name="gender" value = "male">
-	</td>
-	<tr>
-	<td>Select Age Group</td>
-	<td>
-	<select name="age">
-	<option value="select" selected="selected">Select</option>
-	<option value="21-25">21-25</option>
-	<option value="26-30">26-30</option>
-	<option value="31-35">21-25</option>
-	<option value="36-40">21-25</option>
-	
-	</select>
-	</td>
-	<tr>
-	<td><input type="checkbox" name="terms"></td>
-	<td>Agree Terms And Condition</td>
-	<tr>
-	<td><input type="reset" value="RESET"></td>
-	<td><input type="submit" value="REGISTER"></td>
-	</table>
-	
+	<form action="welcome.html" method="get" onsubmit=" return validation();"
+		name="regForm">
+		<table border="2">
+
+			<tr>
+				<td>Enter Username :</td>
+				<td><input type="text" name="txtUsername"></td>
+			</tr>
+			<tr>
+				<td>Enter Password :</td>
+				<td><input type="password" name="txtPassword"></td>
+			</tr>
+			<tr>
+				<td>Enter Email Id :</td>
+				<td><input type="email" name="txtEmail"></td>
+			</tr>
+			<tr>
+				<td>Select Gender</td>
+				<td><input type="radio" name="gender" value="female">Female
+					<input type="radio" name="gender" value="male">Male</td>
+			</tr>
+			<tr>
+				<td>Select Age Group</td>
+				<td><select name="age">
+						<option value="" >Select</option>
+						<option value="21-25">21-25</option>
+						<option value="26-30">26-30</option>
+						<option value="31-35">31-35</option>
+						<option value="36-40">36-40</option>
+
+				</select></td>
+			</tr>
+			<tr>
+				<td><input type="checkbox" name="terms"></td>
+				<td>Agree Terms and Conditons</td>
+			</tr>
+			<tr>
+				<td><input type="reset" value="RESET"></td>
+				<td><input type="submit" value="REGISTER"></td>
+			</tr>
+		</table>
+
 	</form>
 </body>
 </html>

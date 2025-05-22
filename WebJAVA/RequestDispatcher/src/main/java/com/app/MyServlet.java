@@ -1,7 +1,7 @@
 package com.app;
 
+import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
-import jakarta.servlet.ServletRequest;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
@@ -10,15 +10,17 @@ import java.io.IOException;
 import java.io.PrintWriter;
 
 /**
- * Servlet implementation class Servlet1
+ * Servlet implementation class MyServlet
  */
-public class Servlet1 extends HttpServlet {
+
+@WebServlet (urlPatterns = {"/serv1"})
+public class MyServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public Servlet1() {
+    public MyServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -33,17 +35,18 @@ public class Servlet1 extends HttpServlet {
 		response.setContentType("text/html");
 		PrintWriter pw = response.getWriter();
 		
-		String name = request.getParameter("txtName");
-		int age = Integer.parseInt(request.getParameter("txtAge"));
+		String name = request.getParameter("txtUsername");
+		String pwd = request.getParameter("txtPassword");
 		
-		if(age > 18)
+		if(name.equals("admin") && pwd.equals("admin123"))
 		{
-			pw.write("Eligible for Vote "+name);
-			
+			RequestDispatcher rd = request.getRequestDispatcher("serv2");
+			rd.forward(request, response);
 		}
 		else
 		{
-			pw.write("Not Eligible for Vote "+age);
+			pw.write("<br> Invalid Username or Password ");
+			request.getRequestDispatcher("login.html").include(request, response);
 		}
 	
 	}
